@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Latest Work -->
+    <div class="portfolio container">
+        <div class="portfolio-title">
+            <h3>Our Latest Work</h3>
+        </div>
+        <div class="row">
+            {% for blog in blog_object %}
+                <div class="work span3">
+                    <img src="{{ blog.photo.url }}" alt="">
+                    <h4>{{ blog.title }}</h4>
+                    <p>{{ blog.description }}</p>
+                    <div class="icon-awesome">
+                        <p>{{ blog.news_date }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
